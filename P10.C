@@ -129,19 +129,36 @@ int main()
  */
 
 //二分查找
-int binary_search(int arr[], int k)
+#include <string.h>
+int binary_search(int arr[], int k,int sz)
 {
-    int sz = sizeof(arr) / sizeof(arr[0]);
     int left = 0;
-    int right = 0;
-    if(arr[sz/2])
+    int right = sz - 1;
+    while (left <= right)
+    {
+        int mid = (left + right) / 2;
+        if (arr[mid] > k)
+        {
+            right = mid;
+        }
+        else if (arr[mid] < k)
+        {
+            left = mid;
+        }
+        else
+        {
+            return mid;
+        }
+    }
+    return -1;
 }
 #include <stdio.h>
 int main()
 {
     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int sz = sizeof(arr) / sizeof(arr[0]);
     int k = 7;
-    int ret = binary_search(arr, k);
+    int ret = binary_search(arr, k, sz);
     if (ret == -1)
         printf("找不到\n");
     else
