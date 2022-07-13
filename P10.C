@@ -129,7 +129,7 @@ int main()
  */
 
 //二分查找
-#include <string.h>
+/* #include <string.h>
 int binary_search(int arr[], int k,int sz)
 {
     int left = 0;
@@ -139,11 +139,11 @@ int binary_search(int arr[], int k,int sz)
         int mid = (left + right) / 2;
         if (arr[mid] > k)
         {
-            right = mid;
+            right = mid-1;
         }
         else if (arr[mid] < k)
         {
-            left = mid;
+            left = mid+1;
         }
         else
         {
@@ -157,10 +157,48 @@ int main()
 {
     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int sz = sizeof(arr) / sizeof(arr[0]);
-    int k = 7;
+    int k = 10;
     int ret = binary_search(arr, k, sz);
     if (ret == -1)
         printf("找不到\n");
     else
         printf("找到了\n");
+    printf("%d\n", ret);
+} */
+
+/* int add(int *p)
+{
+    (*p)++;
+}
+#include <stdio.h>
+int main()
+{
+    int num = 0;
+    add(&num);
+    printf("%d\n", num);
+    add(&num);
+    printf("%d\n", num);
+    add(&num);
+    printf("%d\n", num);
+} */
+
+//函数的链式访问
+
+/* #include <stdio.h>
+int main()
+{
+    printf("%d\n", printf("%d\n", printf("%d\n", 43)));
+    printf("%d", printf("%d", printf("%d", 43)));
+    return 0;
+}
+ */
+#include "add.h"
+#include <stdio.h>
+int main()
+{
+    int a = 10;
+    int b = 20;
+    int sum = 0;
+    sum = add(a,b);
+    printf("%d\n", sum);
 }
