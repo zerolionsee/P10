@@ -193,12 +193,14 @@ int main()
 }
  */
 #include "add.h"
+#include "add.c"
 #include <stdio.h>
 int main()
 {
     int a = 10;
     int b = 20;
     int sum = 0;
-    sum = add(a,b);
+    sum = Add(a,b);
     printf("%d\n", sum);
+    return 0;
 }

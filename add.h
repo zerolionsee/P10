@@ -1,2 +1,2 @@
-int add(int x, int y);
+int Add(int x, int y);
 //函数的声明
